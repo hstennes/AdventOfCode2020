@@ -1,7 +1,7 @@
 from puzzle_input import read
 data = read('input.txt', 0, [''])[1:-1]
 
-data.extend(range(10, 60))
+data.extend(range(10, 50))
 
 def pop_wrap(mylist, start, end):
     start %= len(mylist)
@@ -17,7 +17,7 @@ def pop_wrap(mylist, start, end):
         return (end, removed)
 
 current = 0
-for i in range(600):
+for i in range(500):
     print(data)
     d = data[current] - 1
     result = pop_wrap(data, current + 1, current + 4)
