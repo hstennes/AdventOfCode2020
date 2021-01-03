@@ -4,6 +4,7 @@ data = read("input.txt", 0, ['\n\n', '\n'])
 tsize, grid_size = 10, 12
 image_size = (tsize - 2) * grid_size
 
+#right, top, left, bottom
 def get_sides(tile):
     sides = [tile[:,-1], tile[0,:], tile[:,0], tile[-1,:]]
     values = []

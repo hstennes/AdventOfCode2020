@@ -2,6 +2,7 @@ import numpy as np
 from puzzle_input import read
 data = read("input.txt", 0, ['\n\n', '\n'])
 
+#right, top, left, bottom
 def get_sides(tile):
     sides = [tile[:,-1], tile[0,:], tile[:,0], tile[-1,:]]
     values = []
@@ -13,11 +14,13 @@ def get_sides(tile):
 side_vals = {}
 for tile in data: 
     sides = get_sides(np.array([list(row) for row in tile[1:]]))
+
+    if tile[0] == 'Tile 3847:': print(sides)
+
     for s in sides:
         side = min(s)
         if side in side_vals: side_vals.pop(side)
         else: side_vals[side] = tile[0]
-print(side_vals)
     
 tiles = []
 for side in side_vals:
