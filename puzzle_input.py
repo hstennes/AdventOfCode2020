@@ -1,6 +1,6 @@
 import re
 
-def read(file, section, commands):
+def read(file, commands, section = 0):
     data = open(file, "r").read().split('<--->\n')[section]
     return multiSplit(data, commands)
 
